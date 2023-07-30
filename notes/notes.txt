@@ -1,0 +1,87 @@
+> npx create-next-app@latest ./
+
+Need to install the following packages:
+  create-next-app@13.4.12
+Ok to proceed? (y)
+√ Would you like to use TypeScript? ... No
+√ Would you like to use ESLint? ... No
+√ Would you like to use Tailwind CSS? ... Yes
+√ Would you like to use `src/` directory? ... No
+√ Would you like to use App Router? (recommended) ... Yes
+√ Would you like to customize the default import alias? ... Yes
+√ What import alias would you like configured? ... @/*
+Creating a new Next.js app in C:\Users\adham\OneDrive\Desktop\projects\prompt_share_app.
+
+> npm install bcrypt mongodb mongoose next-auth
+
+> create/edit some new folders/files in root directory
+- app 	     (delete the pre-installed, make new from scratch)
+- public     (self custom)
+- models     (for mongodb and mongoose database model)
+- styles     (styling of course)
+- utils      (utility function within application)
+- components (for reusable components)
+- .env file  (store keys)
+
+> copy some codes from the github (provided by the tutorial)
+
+> start with the components
+
+//... setup the api for authentication and providers stuff ...//
+
+> create the api/auth/[...nextauth] folder
+
+> create a route.js inside and set the providers needed
+
+> go to console.cloud.google
+
+> create a new project
+
+> go to OAuth consent screen and press create
+
+> enter app name, support email, developer contact information
+
+> go to credentials in the navbar
+
+> create credentials and choose OAuth client ID
+
+> choose applcation type --> web
+
+> add authorized javascript origin --> http://localhost:3000
+
+> add authorized redirect URL --> http://localhost:3000
+
+> then, click create --> we can see out client ID and client secret
+
+> set them in the .env file
+
+//... setup the mongoDB database ..//
+
+> you should have done something within the database.js in the utils folder
+
+> go to mongodb.com/atlas
+
+> make sure you have a cluster that is running
+
+> go to the database access in in the navbar --> take note about the admin user password --> 1234567890QWERTYuiop
+
+> go to the network access in the navbar --> add you current ip and also add the 0.0.0.0 address to give access around the world
+
+> then, go back to database in the navbar --> click connect (besides the cluster name)
+
+> click drivers
+
+> copy the mongoDB URI and create the variable in the .env file
+
+//... nextauth url in the .env file ...//
+
+> important for production
+
+> nextauth_secret --> go to https://www.cryptool.org/en/cto/openssl (as windows is not pre-installed)
+
+> enter --> openssl rand -base64 32 --> RF+ZPwUYGxQGia1MhirJBlEVc8ozJHVoeOzJd0Pcxfw=
+
+//... something to add inside the google cloud console ...//
+
+> http://localhost:3000/api/auth/callback/google --> inside authorized redirect url
+
