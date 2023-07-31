@@ -4,19 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by 
-  the creator of this amazing site (https://dub.sh) – all credits go to them! 
-*/
-
 .main {
   width: 100%;
   min-height: 100vh;
-  /*position: fixed;*/
-  /*display: flex;*/
   justify-content: center;
   padding: 0px 24px 160px 24px;
-  /*pointer-events: none;*/
   background-color: #aec5ef;
 }
 

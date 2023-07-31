@@ -1,6 +1,6 @@
 ## About Murmur App
 
-An application about sharing a confession anonymously without anyone knowing. A self-directed project with a guided tutorial. The application was deployed on [Murmur](https://murmur-g4yqgtsok-adhamhshm.vercel.app/).
+A web application about sharing and reading confessions anonymously without anyone knowing. A self-directed project with some references from online resources. The application was deployed on Vercel. Click the link here [Murmur](https://murmur-g4yqgtsok-adhamhshm.vercel.app/).
 
 ![Murmur Homepage](screenshots/screenshot-homepage.png)
 
