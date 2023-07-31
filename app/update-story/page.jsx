@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useSession } from "next-auth/react";
 import moment from "moment";
 
 import Form from "@components/Form";
@@ -10,6 +11,9 @@ const EditStory = () => {
 
     {/* use the useRouter */}
     const router = useRouter();
+
+    {/* get the current session user */}
+    const { data: session } = useSession();
 
     {/* to search for a parameter */}
     const searchParams = useSearchParams();
@@ -25,11 +29,16 @@ const EditStory = () => {
         const getStoryDetails = async () => {
             const response = await fetch(`/api/story/${storyId}`)
             const data = await response.json();
-            setPost({
-                story: data.story,
-                tag: data.tag,
-                date: data.date
-            })
+            if(session?.user.id === data.creator?._id) {
+                setPost({
+                    story: data.story,
+                    tag: data.tag,
+                    date: data.date
+                })
+            }
+            else {
+                router.push("/")
+            }
         }
         //if the storyId exists, then the function is called
         if(storyId) {
@@ -43,7 +52,10 @@ const EditStory = () => {
         setSubmitting(true);
         const currentDate = moment(new Date()).format('D MMM YYYY, h:mm a');
 
-        if (!storyId) return alert("Missing storyId!");
+        if (!storyId) {
+            alert("Invalid Edit Request!");
+            router.push("/");
+        }
 
         try {
             // create the api route for post method
@@ -75,6 +87,7 @@ const EditStory = () => {
             setPost={setPost}
             submitting={submitting}
             handleSubmit={updateStory}
+            session={session}
         />
     )
 }

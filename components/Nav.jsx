@@ -49,7 +49,7 @@ const Nav = () => {
                     </Link>
 
                     {/* signout button */}
-                    <button type="button" onClick={signOut} className="outline_btn">
+                    <button type="button" onClick={() => {signOut()}} className="outline_btn">
                         Sign Out
                     </button>
 
@@ -62,7 +62,7 @@ const Nav = () => {
                 <>
                     {/* firstly, check if provider exists */}
                     {providers && Object.values(providers).map((provider) => (
-                        <button type="button" key={provider.name} onClick={() => signIn(provider.id)} className="black_btn">
+                        <button type="button" key={provider.name} onClick={() => {signIn(provider.id)}} className="black_btn">
                             Sign In
                         </button>
                     ))}
@@ -100,7 +100,7 @@ const Nav = () => {
                 <>
                     {/* firstly, check if provider exists */}
                     {providers && Object.values(providers).map((provider) => (
-                        <button type="button" key={provider.name} onClick={() => signIn(provider.id)} className="black_btn">
+                        <button type="button" key={provider.name} onClick={() => {signIn(provider.id)}} className="black_btn">
                             Sign In
                         </button>
                     ))}

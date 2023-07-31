@@ -48,10 +48,15 @@ const CreateStory = () => {
         }
         finally {
             setSubmitting(false);
+            if(!session) {
+                router.push("/");
+            }
         }
+
     }
     
     return (
+        
         <Form 
             //we past the following props to the Form component --> pass by props
             type="Create" 
@@ -59,6 +64,7 @@ const CreateStory = () => {
             setPost={setPost}
             submitting={submitting}
             handleSubmit={createStory}
+            session={session}
         />
     )
 }
