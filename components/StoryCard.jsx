@@ -37,15 +37,15 @@ const StoryCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
                     )} 
                     <div className="flex-1 flex-col">
                         {session?.user.id === post.creator._id && pathName === "/profile" ? (
-                            <h3 className="font-satoshi font-semibold text-gray-900">
+                            <h3 className="font-satoshi font-semibold text-gray-900 text_dark">
                                 You
                             </h3>
                         ): (
-                            <h3 className="font-satoshi font-semibold text-gray-900">
+                            <h3 className="font-satoshi font-semibold text-gray-900 text_dark">
                                 {post.creator.username}
                             </h3>
                         )}
-                        <p className='font-inter text-sm text-gray-500'>
+                        <p className="font-inter text-sm text-gray-500 text_dark">
                             {post.date}
                         </p>
                     </div>
@@ -60,11 +60,11 @@ const StoryCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
                     </div>
                 )}
             </div>
-            <p className="my-4 font-satoshi text-sm text-gray-700 whitespace-pre-line">
+            <p className="my-4 font-satoshi text-sm text-gray-700 whitespace-pre-line text_dark">
                 {post.story}
             </p>
             <p 
-                className="font-inter text-sm blue_gradient cursor-pointer" 
+                className="font-inter text-sm blue_gradient cursor-pointer text_tag_dark" 
                 //if the tag is present, we can click the tag to show stories with similar tag
                 onClick={() => handleTagClick && handleTagClick(post.tag)}
             >

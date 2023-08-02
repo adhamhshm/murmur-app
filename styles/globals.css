@@ -4,13 +4,56 @@
 @tailwind components;
 @tailwind utilities;
 
+[data-theme="light"] {
+  .main {
+    background-color: #aec5ef;
+  }
+}
+
+[data-theme="dark"] {
+  .main {
+    background-color: #141b29;
+  }
+  .black_btn {
+    @apply dark:invert;
+  }
+  .outline_btn {
+    @apply dark:invert;
+  }
+  .logo_text {
+    @apply dark:text-slate-200;
+  }
+  .text_dark {
+    @apply dark:text-slate-200;
+  }
+  .text_tag_dark {
+    @apply dark:text-sky-500;
+  }
+  .desc {
+    @apply dark:text-slate-400;
+  }
+  .form_textarea {
+    @apply dark:text-slate-100;
+  }
+  .form_input {
+    @apply dark:text-slate-100;
+  }
+  .delete_btn {
+    @apply dark:bg-slate-900;
+  }
+  .cancel_btn_dark {
+    @apply dark:text-slate-100;
+  }
+}
+
 .main {
   width: 100%;
   min-height: 100vh;
   justify-content: center;
   padding: 0px 24px 160px 24px;
-  background-color: #aec5ef;
+  /*background-color: #aec5ef;*/
 }
+
 
 @media screen and (max-width: 640px) {
   .main {
@@ -30,6 +73,10 @@
 
 .outline_btn {
   @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+}
+
+.submit_form_btn {
+  @apply px-5 py-2 text-sm bg-black rounded-full text-white;
 }
 
 .head_text {
