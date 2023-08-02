@@ -117,7 +117,7 @@ const Nav = () => {
                                 Create Post
                             </Link>
                             {/* to sign out */}
-                            <button type="button" onClick={() => {setToggleDropdown(false); signOut()}} className="mt-5 w-full black_btn">
+                            <button type="button" onClick={() => {setToggleDropdown(false); signOut()}} className="mt-5 w-full black_btn_mobile">
                                 Sign Out
                             </button>
                         </div>
