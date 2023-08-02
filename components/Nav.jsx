@@ -13,6 +13,7 @@ const Nav = () => {
 
     const [mounted, setMounted] = useState(false);
 
+    //adding dark theme
     const renderThemeChanger = () => {
 
         if(!mounted) return null;
