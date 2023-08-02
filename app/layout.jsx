@@ -18,6 +18,7 @@ const RootLayout = ({ children }) => {
     <html lang="en">
         <head>
             <link rel="web icon" href="/assets/icons/favicon.ico"/>
+            <title>Murmur</title>
         </head>
         <body>
             <Provider>
