@@ -10,9 +10,7 @@ import { connectToDB } from "@utils/database";
 export const GET = async (req, { params }) => {
     try {
         await connectToDB();
-        const stories = await Story.find({ 
-            creator: params.id 
-        }).populate("creator");
+        const stories = await Story.find({ creator: params.id }).sort({ _id: -1 }).populate("creator");
 
         return new Response(JSON.stringify(stories), { status: 200 });
     }
