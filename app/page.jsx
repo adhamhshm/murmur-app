@@ -9,7 +9,7 @@ const Home = () => {
             <span className="blue_gradient text-center">Anonymous Stories</span>
             </h1>
             <p className="desc text-center">
-              Share without Anyone Knowing
+              Share without anyone knowing
             </p>
 
             {/* Feed */}

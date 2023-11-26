@@ -8,29 +8,6 @@ import { useRouter } from "next/navigation";
 import { useTheme } from "next-themes";
 
 const Nav = () => {
-
-    const { systemTheme, theme, setTheme } = useTheme();
-
-    const [mounted, setMounted] = useState(false);
-
-    //adding dark theme
-    const renderThemeChanger = () => {
-
-        if(!mounted) return null;
-
-        const currentTheme = theme === "system" ? systemTheme : theme;
-
-        if (currentTheme === "dark") {
-            return (
-                <Image src="/assets/icons/mode.png" role="button" className="invert" width={40} height={40} onClick={() => setTheme("light")} />
-            )
-        }
-        else {
-            return (
-                <Image src="/assets/icons/mode.png" role="button" width={40} height={40} onClick={() => setTheme("dark")} />
-            )
-        }
-    }
   
     //const isUserLoggedIn = true; --> before we apply useSession
     const { data: session} = useSession();
@@ -54,7 +31,6 @@ const Nav = () => {
 
         {/* to call the setProviders function */}
         setWebProviders();
-        setMounted(true);
     }, []);
     
     return (
@@ -68,7 +44,6 @@ const Nav = () => {
         <div className="sm:flex hidden"> {/* to make on small devices, the navigation is hidden */}
             {session?.user ? (
                 <div className="flex gap-3 md:gap-5">
-                    {renderThemeChanger()}
                     {/* create post button */}
                     <Link href="/create-story" className="black_btn">
                         Create Post
@@ -86,7 +61,7 @@ const Nav = () => {
                 </div>
             ): (
                 <div className="flex gap-3">
-                    {renderThemeChanger()}
+                 
                     {/* firstly, check if provider exists */}
                     {providers && Object.values(providers).map((provider) => (
                         <button type="button" key={provider.name} onClick={() => {signIn(provider.id)}} className="black_btn">
@@ -102,8 +77,6 @@ const Nav = () => {
             {session?.user ? (
                 /* if user is logged in, show the navbar */
                 <div className="flex gap-3">
-                    {/* the profile image become clickable via a dropdown */}
-                    {renderThemeChanger()}
                     <Image src={session?.user.image} width={37} height={37} className="rounded-full" alt="profile" onClick={() => setToggleDropdown((prev) => !prev)} />
                     {/* when the user click, the toggle is true, display the dropdown content */}
                     {toggleDropdown && (
@@ -126,7 +99,6 @@ const Nav = () => {
 
             ): (
                 <div className="flex gap-3">
-                    {renderThemeChanger()}
                     {/* firstly, check if provider exists */}
                     {providers && Object.values(providers).map((provider) => (
                         <button type="button" key={provider.name} onClick={() => {signIn(provider.id)}} className="black_btn">

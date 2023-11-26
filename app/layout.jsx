@@ -22,7 +22,6 @@ const RootLayout = ({ children }) => {
         </head>
         <body>
             <Provider>
-            <ThemeProvider>
                 <div className="main">
                     {/* changes to the background */}
                     <div className="gradient" />
@@ -34,7 +33,6 @@ const RootLayout = ({ children }) => {
                         {/* note that we get the children through props, see the RootLayout */} 
                     </main>
                 </div>
-            </ThemeProvider>
             </Provider>
         </body>
     </html>

@@ -54,7 +54,7 @@
   min-height: 100vh;
   justify-content: center;
   padding: 0px 24px 160px 24px;
-  /*background-color: #aec5ef;*/
+  background-color: #141b29;
 }
 
 
@@ -71,7 +71,7 @@
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-none bg-white py-1.5 px-5 text-black transition-all hover:bg-gray-200 hover:text-black text-center text-sm font-inter font-semibold flex items-center justify-center;
 }
 
 .black_btn_mobile {
@@ -79,19 +79,19 @@
 }
 
 .outline_btn {
-  @apply rounded-full border border-black bg-transparent py-1.5 px-5 text-black transition-all hover:bg-black hover:text-white text-center text-sm font-inter flex items-center justify-center;
+  @apply rounded-full border border-none bg-red-900 py-1.5 px-5 text-white transition-all hover:bg-red-700 hover:text-white text-center text-sm font-inter flex items-center justify-center;
 }
 
 .submit_form_btn {
-  @apply px-5 py-2 text-sm bg-black rounded-full text-white;
+  @apply px-5 py-2 text-sm bg-white rounded-full text-black hover:bg-slate-200 font-semibold flex items-center justify-center;
 }
 
 .head_text {
-  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
+  @apply mt-5 text-5xl font-extrabold leading-[1.15] text-white sm:text-6xl;
 }
 
 .orange_gradient {
-  @apply bg-gradient-to-r from-orange-500 to-orange-500 bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-orange-900 to-orange-900 bg-clip-text text-transparent;
 }
 
 .green_gradient {
@@ -103,7 +103,7 @@
 }
 
 .desc {
-  @apply mt-5 text-lg text-gray-600 sm:text-xl max-w-2xl;
+  @apply mt-5 text-lg text-gray-400 sm:text-xl max-w-2xl;
 }
 
 .search_input {
@@ -111,11 +111,11 @@
 }
 
 .delete_btn {
-  @apply w-8 h-8 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
+  @apply w-8 h-8 rounded-full bg-white shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
 }
 
 .glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
+  @apply rounded-xl border border-gray-600 bg-black/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
 }
 
 .prompt_layout {
@@ -127,18 +127,26 @@
   @apply mt-16 mx-auto w-full max-w-xl flex justify-center items-center flex-col gap-2;
 }
 
+.text_dark {
+  @apply text-slate-200;
+}
+
+.text_tag_dark {
+  @apply text-sky-500;
+}
+
 /* Form Component */
 .form_textarea {
-  @apply w-full flex rounded-lg h-[200px] mt-2 p-3 text-sm text-gray-500 outline-0 mb-3;
+  @apply w-full bg-black/10 flex rounded-lg h-[120px] mt-2 p-3 text-sm text-white outline-0 mb-3;
 }
 
 .form_input {
-  @apply w-full flex rounded-lg mt-2 p-3 text-sm text-gray-500 outline-0;
+  @apply w-full bg-black/10 flex rounded-lg mt-2 p-3 text-sm text-white outline-0;
 }
 
 /* Nav Component */
 .logo_text {
-  @apply font-satoshi font-semibold text-lg text-black tracking-wide; /*max-sm:hidden*/
+  @apply font-satoshi font-semibold text-lg text-slate-200 tracking-wide; /*max-sm:hidden*/
 }
 
 .dropdown {

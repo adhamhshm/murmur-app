@@ -41,7 +41,7 @@ const Form = ({ type, post, setPost, submitting, handleSubmit, session }) => {
                     {/* buttons */}
                     <div className="flex-end mx-3 mb-5 gap-4">
                         {/* cancel button */}
-                        <Link href="/" className="text-gray-500 text-sm cancel_btn_dark">
+                        <Link href="/" className="text-gray-100 text-sm cancel_btn_dark">
                             Cancel
                         </Link>
                         {/* submit button */}
