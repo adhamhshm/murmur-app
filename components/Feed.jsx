@@ -32,7 +32,7 @@ const Feed = () => {
 
     //make a get request to read from the database
     const fetchPosts = async () => {
-        const response = await fetch("/api/story", { next: { revalidate: 10 } });
+        const response = await fetch("/api/story");
         const data = await response.json();
 
         setPostsData(data);
