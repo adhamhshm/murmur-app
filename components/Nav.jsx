@@ -5,7 +5,6 @@ import Image from "next/image" //automatically optimize image
 import { useState, useEffect } from "react"; //React hooks
 import { signIn, signOut, useSession, getProviders } from "next-auth/react"; //utility functions to ease the sign in and sign out things
 import { useRouter } from "next/navigation";
-import { useTheme } from "next-themes";
 
 const Nav = () => {
   
@@ -32,6 +31,11 @@ const Nav = () => {
         {/* to call the setProviders function */}
         setWebProviders();
     }, []);
+
+    const handleSignOut = async () => {
+        await signOut();
+        router.push("/"); // Redirect to the home page
+    };
     
     return (
     <nav className="flex-between w-full mb-16 pt-4">
@@ -50,7 +54,7 @@ const Nav = () => {
                     </Link>
 
                     {/* signout button */}
-                    <button type="button" onClick={() => {signOut()}} className="outline_btn">
+                    <button type="button" onClick={handleSignOut} className="outline_btn">
                         Sign Out
                     </button>
 
@@ -90,7 +94,7 @@ const Nav = () => {
                                 Create Post
                             </Link>
                             {/* to sign out */}
-                            <button type="button" onClick={() => {setToggleDropdown(false); signOut()}} className="mt-5 w-full black_btn_mobile">
+                            <button type="button" onClick={() => {setToggleDropdown(false); handleSignOut()}} className="mt-5 w-full black_btn_mobile">
                                 Sign Out
                             </button>
                         </div>

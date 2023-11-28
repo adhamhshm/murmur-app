@@ -4,51 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-[data-theme="light"] {
-  .main {
-    background-color: #aec5ef;
-  }
-}
-
-[data-theme="dark"] {
-  .main {
-    background-color: #141b29;
-  }
-  .black_btn {
-    @apply dark:invert;
-  }
-  .outline_btn {
-    @apply dark:invert;
-  }
-  .logo_text {
-    @apply dark:text-slate-200;
-  }
-  .text_dark {
-    @apply dark:text-slate-200;
-  }
-  .text_tag_dark {
-    @apply dark:text-sky-500;
-  }
-  .desc {
-    @apply dark:text-slate-400;
-  }
-  .form_textarea {
-    @apply dark:text-slate-100;
-  }
-  .form_input {
-    @apply dark:text-slate-100;
-  }
-  .search_input {
-    @apply dark:text-black;
-  }
-  .delete_btn {
-    @apply dark:bg-slate-900;
-  }
-  .cancel_btn_dark {
-    @apply dark:text-slate-100;
-  }
-}
-
 .main {
   width: 100%;
   min-height: 100vh;
@@ -88,10 +43,6 @@
 
 .head_text {
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-white sm:text-6xl;
-}
-
-.orange_gradient {
-  @apply bg-gradient-to-r from-orange-900 to-orange-900 bg-clip-text text-transparent;
 }
 
 .green_gradient {

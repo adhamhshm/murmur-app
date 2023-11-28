@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
@@ -28,7 +27,7 @@ const StoryCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
                         /> 
                     ) : (
                         <Image
-                            src="/assets/icons/user.png" 
+                            src="/assets/icons/user.svg" 
                             alt="user image"
                             width={40}
                             height={40}
@@ -53,9 +52,10 @@ const StoryCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
                 {session?.user.id === post.creator._id && pathName === "/profile" && (
                     <div className="delete_btn" onClick={handleDelete}>
                         <Image
-                            src="/assets/icons/trash.png"
-                            width={20}
-                            height={20}
+                            src="/assets/icons/delete.svg"
+                            width={24}
+                            height={24}
+                            alt="delete"
                         />
                     </div>
                 )}
@@ -74,7 +74,7 @@ const StoryCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             {/* if there is a session, and it is the same as the creator of the user, and user is in the profile page
                 we then show the following div with edit and delete button */}
             {session?.user.id === post.creator._id && pathName === "/profile" && (
-                <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
+                <div className='mt-5 flex-center border-t border-gray-100 pt-3'>
                     {/* the edit button */}
                     <button
                         className="font-inter font-extrabold text-sm green_gradient cursor-pointer"

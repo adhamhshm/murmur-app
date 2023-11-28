@@ -7,6 +7,7 @@ import { connectToDB } from "@utils/database";
 
 //we have params, that will get passed when we have dynamic variable inside the URL
 //is this example, [id] is the dynamic parameter --> we can access params.id
+export const dynamic = "force-dynamic";
 export const GET = async (req, { params }) => {
     try {
         await connectToDB();

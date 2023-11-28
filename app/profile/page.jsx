@@ -19,18 +19,28 @@ const UserProfile = () => {
 
     //make a get request to read from the database of the user
     const fetchPosts = async () => {
-        const response = await fetch(`/api/users/${session?.user.id}/posts`, { next: { revalidate: 10 } });
+        const response = await fetch(`/api/users/${session?.user.id}/posts`, { cache: 'no-store' });
         const data = await response.json();
-
+        
         setPostsDataByUser(data);
     }
     
+    // useEffect(() => {
+    //     //only fetch data when we have the session of the user
+    //     if(session?.user.id) {
+    //         fetchPosts();
+    //     } 
+    // }, []);
+
+    // Need to wait for the session value to not be undefined
     useEffect(() => {
-        //only fetch data when we have the session of the user
-        if(session?.user.id) {
-            fetchPosts();
-        } 
-    }, []);
+        const fetchData = async () => {
+            if (session?.user?.id) {
+                await fetchPosts();
+            }
+        };
+        fetchData();
+    }, [session]);
 
     const handleEdit = (post) => {
         router.push(`/update-story?id=${post._id}`)
