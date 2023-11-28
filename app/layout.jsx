@@ -4,13 +4,11 @@ import "@styles/globals.css";
 
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
-import { ThemeProvider } from "next-themes";
 
-/*
 export const metadata = {
     title: "Murmur",
     description: "Share your stories to everyone!"
-}*/
+}
 
 // the layout will wrap everything
 const RootLayout = ({ children }) => {

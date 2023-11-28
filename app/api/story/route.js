@@ -1,7 +1,7 @@
 import Story from "@models/story";
 import { connectToDB } from "@utils/database";
 
-export const revalidate = 1; //revalidate api every 1 second
+export const dynamic = "force-dynamic";
 {/* this is the get method, the post method is inside /api/story/new */}
 export const GET = async (req) => {
     try {
