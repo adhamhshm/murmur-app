@@ -1,5 +1,3 @@
-"use client";
-
 import "@styles/globals.css";
 
 import Nav from "@components/Nav";
@@ -8,7 +6,7 @@ import Provider from "@components/Provider";
 export const metadata = {
     title: "Murmur",
     description: "Share your stories to everyone!"
-}
+};
 
 // the layout will wrap everything
 const RootLayout = ({ children }) => {
